@@ -96,28 +96,28 @@ const SignIn = () => {
     navigate('/signin');
   };
 
-  const handleFacebookLogin = async (response) => {
-    try {
-      const { accessToken, name, email } = response;
-      const userData = { name, email, token: accessToken };
-      await axios.post('https://670f57f23e71518616576ea4.mockapi.io/api/social-links', userData);
+  // const handleFacebookLogin = async (response) => {
+  //   try {
+  //     const { accessToken, name, email } = response;
+  //     const userData = { name, email, token: accessToken };
+  //     await axios.post('https://670f57f23e71518616576ea4.mockapi.io/api/social-links', userData);
 
-      localStorage.setItem('authtoken', accessToken);
-      localStorage.setItem('isAuthenticated', true);
-      localStorage.setItem('firstName', name);
+  //     localStorage.setItem('authtoken', accessToken);
+  //     localStorage.setItem('isAuthenticated', true);
+  //     localStorage.setItem('firstName', name);
 
-      setErrorMessage('');
-      navigate('/dashboard');
-    } catch (error) {
-      console.error("Error storing user data:", error);
-      setErrorMessage('Something went wrong. Please try again.');
-    }
-  };
+  //     setErrorMessage('');
+  //     navigate('/dashboard');
+  //   } catch (error) {
+  //     console.error("Error storing user data:", error);
+  //     setErrorMessage('Something went wrong. Please try again.');
+  //   }
+  // };
 
-  const handleFacebookFailure = () => {
-    setErrorMessage('Facebook Sign-In was unsuccessful. Try again.');
-    navigate('/signin');
-  };
+  // const handleFacebookFailure = () => {
+  //   setErrorMessage('Facebook Sign-In was unsuccessful. Try again.');
+  //   navigate('/signin');
+  // };
 
   const handleInputFocus = () => {
     setErrorMessage('');
@@ -228,7 +228,7 @@ const SignIn = () => {
                   </Grid>
                   </Button>
 
-                  <Button>
+                  {/* <Button>
                   <Grid item xs={12}>
                     <FacebookLogin
                       appId="470397092131684"
@@ -246,7 +246,7 @@ const SignIn = () => {
                       )}
                     />
                   </Grid>
-                  </Button>
+                  </Button> */}
                   </div>
 
                 </Grid>
